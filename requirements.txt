@@ -1,0 +1,12 @@
+# requirements.txt - Start with basics
+
+asyncio
+dataclasses
+typing
+json
+yaml
+datetime
+enum
+logging
+
+# We'll add LangGraph later when we understand the basics   

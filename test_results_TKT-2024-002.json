@@ -1,0 +1,74 @@
+{
+  "customer_name": "Mike Chen",
+  "email": "mike.chen@techcorp.com",
+  "query": "The mobile app keeps crashing when I try to upload documents",
+  "priority": "MEDIUM",
+  "ticket_id": "TKT-2024-002",
+  "parsed_data": {
+    "intent": "billing_issue",
+    "sentiment": "frustrated"
+  },
+  "extracted_entities": {
+    "product": "Premium Plan",
+    "account_id": "ACC-123"
+  },
+  "normalized_fields": {
+    "date_format": "ISO",
+    "priority_code": "MEDIUM"
+  },
+  "enriched_records": {
+    "sla_hours": 24,
+    "previous_tickets": 2
+  },
+  "flags_calculations": {
+    "sla_risk": "medium",
+    "priority_score": 85
+  },
+  "clarification_needed": true,
+  "clarification_answer": "My account number is ACC-789",
+  "knowledge_base_results": [
+    {
+      "title": "Billing FAQ",
+      "relevance": 0.92
+    }
+  ],
+  "solution_scores": [
+    {
+      "solution": "automated_refund",
+      "score": 95
+    },
+    {
+      "solution": "manual_review",
+      "score": 75
+    }
+  ],
+  "escalation_decision": false,
+  "ticket_updates": {
+    "status": "resolved",
+    "resolution_time": "45min",
+    "closed": true,
+    "satisfaction_survey_sent": true
+  },
+  "generated_response": "Dear Mike Chen, thank you for contacting us. Your issue has been resolved.",
+  "api_results": {
+    "refund_processed": "$25.00",
+    "api_calls": 3
+  },
+  "notifications_sent": [
+    "email_sent"
+  ],
+  "stage_history": [
+    "INTAKE_01:27:43",
+    "UNDERSTAND_01:27:43",
+    "PREPARE_01:27:44",
+    "ASK_01:27:44",
+    "WAIT_01:27:44",
+    "RETRIEVE_01:27:44",
+    "DECIDE_01:27:44",
+    "UPDATE_01:27:44",
+    "CREATE_01:27:45",
+    "DO_01:27:45",
+    "COMPLETE_01:27:45"
+  ],
+  "timestamp": "2025-08-29T01:27:43.726192"
+}

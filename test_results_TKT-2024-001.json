@@ -1,0 +1,74 @@
+{
+  "customer_name": "Sarah Wilson",
+  "email": "sarah.wilson@email.com",
+  "query": "I was charged three times for the same subscription! This is urgent!",
+  "priority": "HIGH",
+  "ticket_id": "TKT-2024-001",
+  "parsed_data": {
+    "intent": "billing_issue",
+    "sentiment": "frustrated"
+  },
+  "extracted_entities": {
+    "product": "Premium Plan",
+    "account_id": "ACC-123"
+  },
+  "normalized_fields": {
+    "date_format": "ISO",
+    "priority_code": "HIGH"
+  },
+  "enriched_records": {
+    "sla_hours": 24,
+    "previous_tickets": 2
+  },
+  "flags_calculations": {
+    "sla_risk": "medium",
+    "priority_score": 85
+  },
+  "clarification_needed": true,
+  "clarification_answer": "My account number is ACC-789",
+  "knowledge_base_results": [
+    {
+      "title": "Billing FAQ",
+      "relevance": 0.92
+    }
+  ],
+  "solution_scores": [
+    {
+      "solution": "automated_refund",
+      "score": 95
+    },
+    {
+      "solution": "manual_review",
+      "score": 75
+    }
+  ],
+  "escalation_decision": false,
+  "ticket_updates": {
+    "status": "resolved",
+    "resolution_time": "45min",
+    "closed": true,
+    "satisfaction_survey_sent": true
+  },
+  "generated_response": "Dear Sarah Wilson, thank you for contacting us. Your issue has been resolved.",
+  "api_results": {
+    "refund_processed": "$25.00",
+    "api_calls": 3
+  },
+  "notifications_sent": [
+    "email_sent"
+  ],
+  "stage_history": [
+    "INTAKE_01:27:40",
+    "UNDERSTAND_01:27:40",
+    "PREPARE_01:27:40",
+    "ASK_01:27:40",
+    "WAIT_01:27:40",
+    "RETRIEVE_01:27:41",
+    "DECIDE_01:27:41",
+    "UPDATE_01:27:41",
+    "CREATE_01:27:41",
+    "DO_01:27:41",
+    "COMPLETE_01:27:41"
+  ],
+  "timestamp": "2025-08-29T01:27:40.156521"
+}
