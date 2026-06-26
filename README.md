@@ -1,124 +1,281 @@
-# 🚀 LangGraph Customer Support Agent  
+# 🤖 LangGraph Customer Support Agent
 
-> An **AI-powered Customer Support Agent** built with **LangGraph**.  
-Implements an **11-stage workflow** with state persistence, MCP server routing, and intelligent escalation handling.  
+> **Production-ready AI Customer Support Agent** built using **LangGraph**, demonstrating stateful workflow orchestration, intelligent routing, escalation handling, and modular AI agent design.
 
----
-
-## ✨ Highlights
-- 🔄 11-stage structured workflow  
-- 📡 Smart MCP server routing  
-- 🧠 AI vs Human escalation logic  
-- 📊 Full debugging & logging support  
-- 🧪 Customizable test scenarios  
+This project showcases how Large Language Models (LLMs) can be integrated into a structured customer support pipeline using graph-based execution, making it suitable for enterprise AI automation use cases.
 
 ---
 
-## 🔄 Workflow Overview  
+# 🚀 Features
 
-The LangGraph Customer Support Agent follows an **11-stage workflow**:  
+* 🔄 Multi-stage LangGraph workflow
+* 🧠 Stateful conversation management
+* 📌 Intelligent issue classification
+* 🔀 AI vs Human escalation decision
+* 📡 Modular tool routing architecture
+* 📝 Automated response generation
+* 📊 Workflow logging and debugging
+* 🧪 Built-in testing scenarios
+* ⚙️ Extensible architecture for enterprise use cases
 
-```mermaid
-flowchart TD
-    A[📥 INTAKE<br/>Accept Request] --> B[🧠 UNDERSTAND<br/>Parse & Analyze]
-    B --> C[📡 CLASSIFY<br/>Categorize Issue]
-    C --> D[📂 RETRIEVE<br/>Fetch Knowledge Base]
-    D --> E[🤖 DECIDE<br/>AI or Human?]
-    E -->|AI| F[⚙️ SOLVE<br/>Generate Solution]
-    E -->|Human| G[🙋 Escalate<br/>Assign to Agent]
-    F --> H[📝 SUMMARIZE<br/>Prepare Response]
-    G --> H
-    H --> I[📧 RESPOND<br/>Send Reply]
-    I --> J[📊 LOGGING<br/>Store Results]
-    J --> K[✅ COMPLETE<br/>Workflow Finished]
+---
+
+# 🏗️ System Architecture
+
+```text
+Customer Query
+       │
+       ▼
+┌─────────────────────┐
+│  Request Intake     │
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│ Intent Detection    │
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│ Issue Classification│
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│ Knowledge Retrieval │
+└─────────────────────┘
+       │
+       ▼
+┌─────────────────────┐
+│ AI Decision Engine  │
+└─────────────────────┘
+     │          │
+     │          │
+ AI Solves   Escalate
+     │          │
+     └────┬─────┘
+          ▼
+ Response Generator
+          │
+          ▼
+ Logging & Storage
+          │
+          ▼
+     Workflow Complete
 ```
 
-langgraph-customer-support/
-│── full_langgraph_agent.py # Main agent with 11-stage workflow
-│── beginner_test.py # Test scenarios for customer queries
-│── config.json # Configuration for servers & stages
-│── requirements.txt # Project dependencies
-│── README.md # Documentation
-│── .vscode/ # Debugging & launch configs
+---
 
+# 🔄 Workflow
+
+The application implements an end-to-end customer support workflow consisting of multiple processing stages:
+
+1. Customer Request Intake
+2. Query Understanding
+3. Intent Classification
+4. Knowledge Retrieval
+5. AI Decision Engine
+6. Human Escalation Check
+7. Solution Generation
+8. Response Summarization
+9. Customer Response
+10. Workflow Logging
+11. Completion
 
 ---
 
-## ⚙️ Installation
+# 📂 Project Structure
 
-### 1. Clone Repository
+```text
+langgraph-customer-support/
+│
+├── full_langgraph_agent.py        # Main LangGraph workflow
+├── beginner_test.py               # Sample test scenarios
+├── mcp_concept.py                 # MCP routing concepts
+├── test_results_TKT-2024-001.json
+├── test_results_TKT-2024-002.json
+├── requirements.txt
+├── LICENSE
+├── README.md
+└── .vscode/
+```
+
+---
+
+# 🛠️ Technologies Used
+
+## AI Frameworks
+
+* LangGraph
+* LangChain
+
+## Programming
+
+* Python
+
+## AI Concepts
+
+* Workflow Orchestration
+* AI Agents
+* State Management
+* Tool Routing
+* Prompt Engineering
+
+## Software Engineering
+
+* Modular Architecture
+* Logging
+* Exception Handling
+* JSON Processing
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
 ```bash
 git clone https://github.com/ROCKYBH7/langgraph-customer-support.git
+
 cd langgraph-customer-support
 ```
 
-### 2. Create Virtual Environment
-```bash 
+## Create Virtual Environment
+
+```bash
 python -m venv venv
-# Windows
+```
+
+Windows
+
+```bash
 venv\Scripts\activate
-# Mac/Linux
+```
+
+Linux / macOS
+
+```bash
 source venv/bin/activate
 ```
 
-### 3. Install Dependencies
+## Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## ▶️ Running the Agent
+---
 
-Run the test scenarios:
+# ▶️ Run the Project
+
+Execute the test scenarios:
+
 ```bash
-
 python beginner_test.py
 ```
 
-Expected logs:
+Example output:
 
-```pgsql
-INFO - 📥 Accept customer request - INTAKE
-INFO - ✅ INTAKE completed
-INFO - 🧠 Parse and understand request - UNDERSTAND
-INFO - ✅ Workflow completed successfully
+```text
+INFO  Request Accepted
+
+INFO  Understanding Query
+
+INFO  Classifying Issue
+
+INFO  Retrieving Knowledge
+
+INFO  AI Decision Completed
+
+INFO  Response Generated
+
+INFO  Workflow Completed Successfully
 ```
 
-## 🧪 Custom Tests
+---
 
-You can add your own test cases inside beginner_test.py:
+# 🧪 Example Test Scenario
+
 ```python
 {
-    "name": "Custom Test",
-    "customer": {
-        "customer_name": "Test User",
-        "email": "test@example.com",
-        "query": "I cannot log into my account",
-        "priority": "HIGH",  # LOW | MEDIUM | HIGH | URGENT
-        "ticket_id": "TKT-1234"
-    }
+    "customer_name": "John Doe",
+    "email": "john@example.com",
+    "ticket_id": "TKT-2024-001",
+    "priority": "HIGH",
+    "query": "I cannot access my account after resetting my password."
 }
 ```
 
-## 📊 Debugging
+---
 
-  - Set breakpoints in VSCode (full_langgraph_agent.py)
+# 📊 Current Capabilities
 
-  - Use F5 to start debugging
+✅ Multi-stage workflow execution
 
-  - Track variables in the Debugger panel
+✅ Stateful graph execution
 
-  - Logs will show ✅ stage completions, 📡 server routing, and 🚨 escalations
+✅ Intelligent ticket routing
 
+✅ Human escalation logic
 
-## 👨‍💻 Author
+✅ Structured logging
 
-Balaji R H
+✅ Test scenario execution
 
-📍 Madurai, India
+✅ Modular architecture
 
-💼 **Data Scientist | AI/ML Engineer | Python & SQL Specialist | SDET Trainee | Cloud (Beginner)**  
+---
 
+# 🚀 Future Improvements
 
-🔗 [LinkedIn](https://www.linkedin.com/in/balaji-r-h-a81107298)
+* Integrate OpenAI / Azure OpenAI / Gemini APIs
+* Retrieval-Augmented Generation (RAG)
+* Vector Database integration
+* Conversation Memory
+* Function Calling
+* FastAPI REST API
+* Docker deployment
+* Authentication & Role-based Access
+* Monitoring with LangSmith
+* Kubernetes deployment
 
-🔗 [GitHub](https://github.com/ROCKYBH7)
+---
+
+# 🎯 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+* AI Agent Development
+* LangGraph Workflows
+* Enterprise AI Automation
+* State Management
+* LLM Application Design
+* Workflow Engineering
+* Software Architecture
+* Production-oriented AI Systems
+
+---
+
+# 📜 License
+
+Licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Balaji R H**
+
+AI Engineer | Machine Learning Engineer | Generative AI Developer
+
+📧 Email: **[balajirh.ds@gmail.com](mailto:balajirh.ds@gmail.com)**
+
+💼 LinkedIn:
+https://www.linkedin.com/in/balaji-r-h-a81107298
+
+🐙 GitHub:
+https://github.com/ROCKYBH7
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
